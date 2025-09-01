@@ -111,6 +111,9 @@ if path:
             best_edge = min(edge_data.values(), key=lambda d: d.get("length", float("inf")))
             name = best_edge.get("name", "Unnamed Road")
 
+            if isinstance(name, list) and len(name) > 1:
+                name = name[1]
+            
             if not street_names or street_names[-1] != name:
                 street_names.append(name)
 
@@ -122,3 +125,4 @@ if path:
 else:
 
     print("No path found!")
+
