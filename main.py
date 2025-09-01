@@ -83,7 +83,7 @@ def A_STAR_SEARCH(graph, start, goal):
     return None
 
 
-G = ox.load_graphml("Driving Graphs/la_drive.graphml")
+G = ox.load_graphml("dc_drive.graphml")
 
 start_address = input("Current location address: ")
 destination_address = input("Destination address: ")
@@ -120,4 +120,5 @@ if path:
 
     ox.plot_graph_route(G, path, route_linewidth=4, node_size=0, orig_dest_size=100)
 else:
+
     print("No path found!")
